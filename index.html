@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	
+		<title>Defend Yourself</title>
+		
+		<style>
+		
+		* {
+			margin:0;padding:0;
+		}
+		
+		BODY {
+			background:#44445c;
+			font-family:Consolas, Monaco, monospace;
+			color:white;
+		 	-moz-user-select: none;
+		    -khtml-user-select: none;
+		    user-select: none;
+		}
+		
+		h1 {
+			text-align:center;
+			font-variant:small-caps;
+			margin:10px 0;
+			font-size:30px;
+		}
+		
+		#content {
+			-webkit-box-shadow:0 2px 8px #000;
+			-moz-box-shadow:0 2px 8px #000;
+			box-shadow:0 2px 8px #000;
+			margin:0 auto;
+			height:480px;
+			width:640px;
+			position:relative;
+			padding:30px;
+			border-radius:20px;
+			-webkit-border-radius:20px;
+			-moz-border-radius:20px;
+			background:#aaa;
+			background:-webkit-gradient(
+			    linear,
+			    left bottom,
+			    left top,
+			    color-stop(0, rgb(117,117,117)),
+			    color-stop(1, rgb(194,194,194))
+			);
+			background:-moz-linear-gradient(
+			    center bottom,
+			    rgb(117,117,117) 0%,
+			    rgb(194,194,194) 100%
+			);
+			border:2px solid #999;
+		}
+		
+		#canvas {
+			margin:0 auto;
+			display:block;
+			background:black;
+			cursor:crosshair;
+			border:3px inset #aaa;
+		}
+		
+		#inner, #score {
+			position:absolute;
+			top:50px;
+			left:50%;
+			width:400px;
+			margin-left:-200px;
+			background:rgba(0,0,0,0.5);
+			padding:15px;
+			border-radius:10px;
+			-webkit-border-radius:10px;
+			-moz-border-radius:10px;
+			border:1px solid #444;
+			font-size:12px;
+			-webkit-background-clip: padding-box;
+			-moz-background-clip: padding-box;
+		}
+		
+		p {
+			margin: 10px 0;
+		}
+		
+		#start, #restart {
+			margin:0 auto;
+			display:block;
+			padding:3px 5px;
+		}
+		
+		#score {
+			display:none;
+		}
+		
+		h3 {
+			text-align:center;
+			margin:35px 0 10px;
+		}
+		
+		li {
+			list-style:none;
+			text-align:center;
+		}
+		
+		a {
+			color:#aab;
+			text-decoration:none;
+			-webkit-transition:all 0.5s ease-in-out;
+			border-radius:5px;
+			display:block;
+			text-align:center;
+			margin:10px auto;
+			font-size:11px;
+			width:200px;
+		}
+		
+		a:HOVER {
+			background:#778;
+			color:black;
+		}
+		
+		</style>
+	
+	</head>
+
+	<body>
+	
+		<h1>Defend Yourself</h1>
+	
+		<div id="content">
+	
+			<canvas id="canvas">
+			
+				HTML5 FTW!
+			
+			</canvas>
+			
+			<div id="inner">
+			
+				<h2>Don't Die.</h2>
+				
+				<p>Aim with the mouse. Fire by clicking. Bounce away the attacking balls. Simple.</p>
+				
+				<p>Pay attention to your ammo bar on the bottom of the screen. Ammo refills quickly but is also depleted quickly.</p>
+				
+				<p>The spacebar will launch a larger ball. It packs a lot of punch, but uses a significant amount of ammo.</p>
+				
+				<p>Be careful with bounces. Balls bounce at high speeds, and if you're not careful, things might take an unexpected turn for the worse. Watch out for the wind too.</p>
+				
+				<p>Points are based on the length time you last, how many balls you deflect off-screen, and how many balls you shoot. The more balls you shoot, the lower your score. Your score will be zero until you knock at least one ball off screen. </p>
+				
+				<p><button id="start">Begin</button></p>
+			
+			</div>
+			
+			<div id="score">
+			
+				<h2>Whoa.</h2>
+				
+				<p>You lasted <span id="time"></span> seconds.</p>
+				
+				<p>You knocked away <span id="numballs"></span> attacking balls, shooting <span id="numbullets"></span> of your own.</p>
+				
+				<p>Your final score is <span id="final"></span>.</p>
+				
+				<p><button id="restart">Play Again</button></p>
+			
+			</div>
+			
+		</div>
+		
+		<h3>High Scores</h3>
+		
+		<ul id="highscores">
+		</ul>
+		
+		<script type="text/javascript" src="js.js"></script>
+	
+		<a href="http://timothy-armstrong.com">Built By Timothy Armstrong</a>
+	
+	</body>
+
+</html>
